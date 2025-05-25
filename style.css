@@ -1,0 +1,1063 @@
+/* Importation de la police artistique */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* Importation de la police lisible */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+/* Navigation styles */
+nav {
+    background-color: white; /* Fond blanc pour le cadre */
+    border: 3px solid #ddd; /* Bordure grise subtile */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    padding: 0; /* Réinitialise le padding */
+    display: grid; /* Utilise un modèle de grille */
+    grid-template-columns: repeat(4, 1fr); /* Divise en 4 colonnes égales */
+    align-items: center; /* Aligne verticalement les éléments */
+    text-align: center; /* Centre le texte dans chaque partie */
+    margin-top: 20px; /* Décale légèrement le menu vers le bas */
+    position: fixed; /* Rend la barre de navigation fixe */
+    top: 0; /* Positionne la barre en haut de la page */
+    left: 0;
+    width: 90%; /* S'étend sur toute la largeur */
+    z-index: 1000; /* Assure que la barre reste au-dessus des autres éléments */
+}
+
+nav .logo {
+    grid-column: 1; /* Place le logo dans la première colonne */
+    flex-shrink: 0; /* Empêche le logo de rétrécir */
+    font-size: 1.8rem; /* Taille du texte du logo */
+    font-weight: bold; /* Met le logo en gras */
+    margin-right: 20px; /* Ajoute un espace entre le logo et les liens */
+    position: relative; /* Permet de positionner la sous-écriture */
+    font-family: 'Great Vibes', cursive; /* Police artistique pour le logo */
+}
+
+nav .logo-subtext {
+    display: block; /* Affiche le texte sur une nouvelle ligne */
+    font-size: 0.85rem; /* Taille légèrement ajustée pour une meilleure lisibilité */
+    font-weight: normal; /* Texte moins gras */
+    color: #666; /* Couleur légèrement plus foncée pour un meilleur contraste */
+    margin-top: 2px; /* Ajoute un petit espace au-dessus */
+    text-transform: uppercase; /* Met le texte en majuscules */
+    font-family: 'Roboto', sans-serif; /* Police plus lisible pour le sous-texte */
+}
+
+nav ul {
+    grid-column: span 3; /* Étend les liens sur les 3 colonnes restantes */
+    display: flex; /* Garde les liens en ligne */
+    justify-content: space-around; /* Espace égal entre les liens */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Augmente l'espace entre les éléments du menu */
+    flex-grow: 1; /* Permet aux liens d'occuper l'espace restant */
+    margin-left: 0; /* Supprime le décalage vers la droite */
+    align-items: center; /* Assure l'alignement vertical des liens avec le logo */
+}
+
+nav ul li {
+    margin: 0 10px; /* Augmente les marges entre les éléments */
+}
+
+nav ul li:last-child {
+    margin-left: auto; /* Décale le dernier élément (Contact) beaucoup plus à droite */
+    margin-bottom: 0; /* Supprime l'espace en bas pour aligner correctement */
+}
+
+nav ul li:nth-child(1) {
+    margin-left: auto; /* Décale le bouton "Home" vers la droite */
+}
+
+nav ul li:nth-child(2) {
+    margin-left: 0; /* Supprime le décalage excessif du bouton "About" */
+}
+
+nav ul li:nth-child(3) {
+    margin-left: 0; /* Supprime le décalage excessif du bouton "Gallery" */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* Couleur du texte */
+    background-color: #000000; /* Couleur de fond des boutons */
+    font-size: 1.5rem; /* Agrandit la taille du texte */
+    flex-grow: 1; /* Permet aux liens d'occuper tout l'espace disponible */
+    text-align: center; /* Centre le texte dans chaque lien */
+    padding: 10px 20px; /* Ajoute du padding pour ressembler à des boutons */
+    border: none; /* Supprime les bordures */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+    transition: background-color 0.3s, transform 0.2s; /* Ajoute des transitions */
+}
+
+nav ul li a:hover {
+    background-color: #333333; /* Couleur au survol */
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+    color: gray; /* Change la couleur du texte au survol */
+}
+
+body {
+    padding-top: 80px; /* Ajoute un espace pour éviter que le contenu soit masqué par la barre fixe */
+    color: #000; /* Couleur noire */
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode a {
+    color: #ffffff; /* Texte noir devient blanc */
+}
+
+body.dark-mode .intro-section h1,
+body.dark-mode .intro-section p,
+body.dark-mode #about h2,
+body.dark-mode #about p,
+body.dark-mode #clients h2,
+body.dark-mode #clients p {
+    color: #000; /* Exclut les sections intro, about et clients des changements en mode sombre */
+}
+
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    color: #ffffff; /* Texte noir dans les tableaux devient blanc */
+    background-color: #1e1e1e; /* Fond des tableaux devient sombre */
+    border-color: #333; /* Bordures des tableaux deviennent sombres */
+}
+
+nav.dark-mode {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.footer.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #333;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Augmente l'espacement entre les photos */
+    justify-content: center;
+    margin-top: 60px; /* Ajoute un espace au-dessus des galeries */
+    margin-bottom: 60px; /* Ajoute un espace en bas de chaque galerie */
+}
+
+/* Styles améliorés pour les cadres des photos */
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; /* Active l'effet 3D */
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Dégradé de fond */
+    border-radius: 15px; /* Coins arrondis */
+    overflow: hidden; /* Cache les débordements */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transition fluide */
+}
+
+.image-container:hover {
+    transform: scale(1.1) rotate(3deg); /* Agrandit et incline légèrement au survol */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Accentue l'ombre au survol */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit le cadre sans déformation */
+    border-radius: 0; /* Supprime les coins arrondis */
+    transition: transform 0.4s ease; /* Transition fluide pour l'image */
+}
+
+.image-container:hover img {
+    transform: scale(1.2); /* Zoom léger sur l'image au survol */
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Effet de lumière */
+    opacity: 0;
+    transition: opacity 0.4s ease; /* Transition fluide pour l'effet de lumière */
+}
+
+.image-container:hover::before {
+    opacity: 1; /* Affiche l'effet de lumière au survol */
+}
+
+.image-container button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dégradé pour le bouton */
+    color: white; /* Couleur du texte */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+    transition: background 0.4s ease, transform 0.3s ease; /* Transition fluide */
+}
+
+.image-container button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Inverse le dégradé au survol */
+    transform: scale(1.1); /* Agrandit légèrement le bouton au survol */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Accentue l'ombre */
+}
+
+.image-container button:active {
+    transform: scale(0.95); /* Réduit légèrement le bouton lors du clic */
+    box-shadow: none; /* Supprime l'ombre lors du clic */
+}
+
+/* Highlight text styles */
+.highlight-text {
+    text-align: center; /* Centre le texte horizontalement */
+    line-height: 1.8; /* Ajuste l'espacement entre les lignes */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px; /* Limite la largeur pour créer l'effet pyramidal */
+    font-size: 2rem; /* Augmente la taille du texte */
+    font-weight: bold; /* Rend le texte plus visible */
+    color: #000; /* Couleur noire */
+    text-transform: uppercase; /* Met le texte en majuscules */
+    letter-spacing: 2px; /* Ajoute un espacement entre les lettres */
+    margin-top: 40px; /* Ajoute un espace au-dessus */
+    margin-bottom: 20px; /* Ajoute un espace en dessous */
+    border-bottom: 2px solid #000; /* Ligne en bas */
+    padding-bottom: 10px; /* Ajoute un espace entre le texte et la ligne */
+}
+
+/* H3 styles */
+h3 {
+    text-align: center; /* Centre le texte horizontalement */
+    line-height: 1.8; /* Ajuste l'espacement entre les lignes */
+    margin: 0 auto; /* Centre le texte */
+    max-width: 600px; /* Limite la largeur */
+    font-size: 1.5rem; /* Augmente légèrement la taille du texte */
+    font-weight: bold; /* Rend le texte plus visible */
+    background: none; /* Supprime le dégradé */
+    -webkit-background-clip: unset; /* Réinitialise le clip de fond */
+    -webkit-text-fill-color: unset; /* Réinitialise la couleur de remplissage */
+    color: #000; /* Couleur noire */
+    text-shadow: none; /* Supprime l'ombre subtile */
+    animation: none; /* Supprime l'animation */
+    position: absolute;
+    bottom: 20px; /* Positionne le texte à 20px du bas */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Text section styles */
+.text-section {
+    text-align: center;
+    margin-top: 80px; /* Ajoute un espace au-dessus des écritures */
+    margin-bottom: 80px; /* Ajoute un espace en dessous des écritures */
+}
+
+/* Keyframes for glow animation */
+@keyframes glow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(255, 120, 180, 0.5);
+    }
+    100% {
+        text-shadow: 4px 4px 8px rgba(255, 120, 180, 0.8);
+    }
+}
+
+/* Additional text styles */
+.additional-text {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-top: 2cm; /* Ajoute une distance de 2 cm entre le titre et le texte */
+    font-size: 1.2rem; /* Taille du texte */
+    line-height: 1.8; /* Espacement entre les lignes */
+    color: #555; /* Couleur légèrement différente pour le texte */
+    max-width: 800px; /* Limite la largeur pour un meilleur affichage */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section des Hommes styles */
+.section-homme {
+    margin-top: 80px; /* Ajoute un espace au-dessus de la section */
+    margin-bottom: 80px; /* Ajoute un espace en dessous de la section */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000; /* Couleur noire */
+    margin-bottom: 40px; /* Ajoute un espace sous le titre */
+}
+
+.homme-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les cases */
+    justify-content: center;
+}
+
+.homme-gallery .image-container {
+    width: 200px;
+    height: 200px;
+    background-color: transparent; /* Supprime la couleur de fond par défaut */
+    border: 2px dashed #ccc; /* Bordure pour indiquer une case vide */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #999;
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition pour les animations */
+}
+
+.homme-gallery .image-container:hover {
+    transform: scale(1.05); /* Agrandit légèrement la case au survol */
+    box-shadow: none; /* Supprime l'ombre au survol */
+}
+
+.homme-gallery .image-container:active {
+    transform: scale(0.95); /* Réduit légèrement la case lorsqu'on clique dessus */
+    box-shadow: none; /* Supprime l'ombre lors du clic */
+}
+
+/* Section des Femmes styles */
+.section-femme {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.femme-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.femme-gallery .image-container {
+    width: 200px;
+    height: 200px;
+    background-color: transparent; /* Supprime la couleur de fond par défaut */
+    border: 2px dashed #ccc; /* Bordure pour indiquer une case vide */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #999;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.femme-gallery .image-container:hover {
+    transform: scale(1.05);
+    box-shadow: none; /* Supprime l'ombre au survol */
+}
+
+.femme-gallery .image-container:active {
+    transform: scale(0.95);
+    box-shadow: none; /* Supprime l'ombre lors du clic */
+}
+
+/* Section des Filles styles */
+.section-fille {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.fille-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.fille-gallery .image-container {
+    width: 200px;
+    height: 200px;
+    background-color: transparent; /* Supprime la couleur de fond par défaut */
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #999;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fille-gallery .image-container:hover {
+    transform: scale(1.05);
+    box-shadow: none; /* Supprime l'ombre au survol */
+}
+
+.fille-gallery .image-container:active {
+    transform: scale(0.95);
+    box-shadow: none; /* Supprime l'ombre lors du clic */
+}
+
+/* Section des Garçons styles */
+.section-garcon {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.garcon-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.garcon-gallery .image-container {
+    width: 200px;
+    height: 200px;
+    background-color: transparent; /* Supprime la couleur de fond par défaut */
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #999;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.garcon-gallery .image-container:hover {
+    transform: scale(1.05);
+    box-shadow: none; /* Supprime l'ombre au survol */
+}
+
+.garcon-gallery .image-container:active {
+    transform: scale(0.95);
+    box-shadow: none; /* Supprime l'ombre lors du clic */
+}
+
+/* Intro section styles */
+.intro-section {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    max-width: 800px; /* Limite la largeur */
+}
+
+.intro-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Couleur du titre */
+    margin-bottom: 20px; /* Espace sous le titre */
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555; /* Couleur du texte */
+}
+
+/* About section styles */
+.about-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    max-width: 800px; /* Limite la largeur */
+}
+
+.about-section .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Couleur du titre */
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555; /* Couleur du texte */
+    margin-bottom: 20px;
+}
+
+.about-image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Coins arrondis pour l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+/* Clients section styles */
+.clients-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9f9f9, #eaeaea); /* Dégradé léger */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    animation: fadeInUp 1s ease; /* Animation d'apparition */
+}
+
+.clients-section .section-title {
+    font-size: 2.5rem;
+    font-family: 'Great Vibes', cursive; /* Police artistique */
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.clients-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.client-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    animation: fadeInUp 1s ease; /* Animation d'apparition */
+}
+
+.client-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: bounce 2s infinite; /* Animation de rebond */
+}
+
+.client-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-feedback {
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+    font-style: italic; /* Texte en italique */
+}
+
+.client-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase; /* Texte en majuscules */
+    letter-spacing: 1px; /* Espacement entre les lettres */
+}
+
+/* Animation pour les cartes des clients */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour les photos des clients */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Contact section styles */
+.contact-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    max-width: 800px; /* Limite la largeur */
+}
+
+.contact-section .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Couleur du titre */
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555; /* Couleur du texte */
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les champs */
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #6a11cb; /* Couleur de mise en surbrillance */
+    outline: none;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dégradé pour le bouton */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Inverse le dégradé au survol */
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+}
+
+.contact-button:active {
+    transform: scale(0.95); /* Réduit légèrement lors du clic */
+}
+
+/* Réseaux et Localisation section styles */
+.social-location-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    max-width: 800px; /* Limite la largeur */
+}
+
+.social-location-section .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Couleur du titre */
+    margin-bottom: 20px;
+}
+
+.social-container {
+    margin-bottom: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les icônes */
+}
+
+.social-link {
+    font-size: 2rem; /* Taille des icônes */
+    color: #333; /* Couleur par défaut */
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.social-link:hover {
+    transform: scale(1.3); /* Agrandit légèrement au survol */
+    color: #dabbbb; /* Change la couleur au survol */
+    animation: magicPulse 1s infinite; /* Ajoute une animation magique */
+}
+
+/* Animation magique pour les icônes des réseaux sociaux */
+@keyframes magicPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.location-container {
+    margin-top: 20px;
+}
+
+.location-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.location-container iframe {
+    animation: mapGlow 2s infinite; /* Ajoute une animation de lueur */
+    border: 2px solid #6a11cb; /* Bordure stylisée */
+    border-radius: 15px; /* Coins arrondis */
+    transition: transform 0.3s ease;
+}
+
+.location-container iframe:hover {
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+    border-color: #2575fc; /* Change la couleur de la bordure au survol */
+}
+
+/* Animation pour la géolocalisation */
+@keyframes mapGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Payment section styles */
+.payment-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    max-width: 800px; /* Limite la largeur */
+}
+
+.payment-section .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Couleur du titre */
+    margin-bottom: 20px;
+}
+
+.payment-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les options */
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-option:hover {
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Accentue l'ombre */
+}
+
+.payment-option img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.payment-option img:hover {
+    transform: scale(1.1); /* Agrandit légèrement les logos au survol */
+}
+
+.payment-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dégradé pour le bouton */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.payment-button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Inverse le dégradé au survol */
+    transform: scale(1.1); /* Agrandit légèrement au survol */
+}
+
+.payment-button:active {
+    transform: scale(0.95); /* Réduit légèrement lors du clic */
+}
+
+/* Styles pour la section Tabaski */
+.tabaski-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe5b4, #ffcc99); /* Dégradé festif */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.tabaski-section .section-title {
+    font-size: 2.5rem;
+    font-family: 'Great Vibes', cursive;
+    color: #d2691e; /* Couleur festive */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabaski-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.tabaski-decorations {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tabaski-decorations img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabaski-decorations img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .gallery, .homme-gallery, .femme-gallery, .fille-gallery, .garcon-gallery {
+        gap: 15px; /* Réduit l'espacement entre les photos */
+    }
+
+    .image-container {
+        width: 250px; /* Réduit la largeur des images */
+        height: 180px; /* Réduit la hauteur des images */
+    }
+
+    .intro-title {
+        font-size: 1.8rem; /* Réduit la taille du titre */
+    }
+
+    .intro-text {
+        font-size: 1rem; /* Réduit la taille du texte */
+    }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        grid-template-columns: 1fr; /* Réduit la grille à une seule colonne */
+        padding: 10px; /* Ajoute un padding pour éviter le chevauchement */
+    }
+
+    nav ul {
+        flex-direction: column; /* Affiche les liens en colonne */
+        gap: 10px; /* Réduit l'espacement entre les liens */
+        margin-top: 10px; /* Ajoute un espace entre le logo et les liens */
+    }
+
+    nav .logo {
+        text-align: center; /* Centre le logo */
+        margin-bottom: 10px; /* Ajoute un espace sous le logo */
+    }
+
+    nav ul li {
+        margin: 0; /* Supprime les marges latérales */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Réduit la taille du texte des liens */
+        padding: 8px 15px; /* Ajuste le padding pour les petits écrans */
+    }
+
+    nav ul li button {
+        font-size: 1.2rem; /* Réduit la taille du bouton de bascule */
+    }
+
+    .gallery, .homme-gallery, .femme-gallery, .fille-gallery, .garcon-gallery {
+        gap: 15px; /* Réduit l'espacement entre les photos */
+    }
+
+    .image-container {
+        width: 250px; /* Réduit la largeur des images */
+        height: 180px; /* Réduit la hauteur des images */
+    }
+
+    .intro-title {
+        font-size: 1.8rem; /* Réduit la taille du titre */
+    }
+
+    .intro-text {
+        font-size: 1rem; /* Réduit la taille du texte */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: static; /* Rend la barre de navigation non fixe */
+    }
+
+    body {
+        padding-top: 0; /* Supprime l'espace réservé pour la barre fixe */
+    }
+
+    .gallery, .homme-gallery, .femme-gallery, .fille-gallery, .garcon-gallery {
+        flex-direction: column; /* Affiche les images en colonne */
+        align-items: center; /* Centre les images */
+    }
+
+    .image-container {
+        width: 200px; /* Réduit davantage la largeur des images */
+        height: 150px; /* Réduit davantage la hauteur des images */
+    }
+
+    .intro-title {
+        font-size: 1.5rem; /* Réduit encore la taille du titre */
+    }
+
+    .intro-text {
+        font-size: 0.9rem; /* Réduit encore la taille du texte */
+    }
+
+    .payment-options {
+        flex-direction: column; /* Affiche les options de paiement en colonne */
+        gap: 15px; /* Réduit l'espacement entre les options */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column; /* Affiche le menu en colonne */
+        gap: 10px; /* Réduit l'espacement entre les liens */
+    }
+
+    .image-container {
+        width: 150px; /* Réduit encore la largeur des images */
+        height: 120px; /* Réduit encore la hauteur des images */
+    }
+
+    .intro-title {
+        font-size: 1.2rem; /* Réduit encore la taille du titre */
+    }
+
+    .intro-text {
+        font-size: 0.8rem; /* Réduit encore la taille du texte */
+    }
+
+    .footer {
+        font-size: 0.8rem; /* Réduit la taille du texte dans le footer */
+    }
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Couleur de fond sombre */
+    color: #000000; /* Couleur du texte */
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-top: 2px solid #e6e6e6; /* Ligne décorative en haut */
+}
+
+.footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Police lisible */
+}
